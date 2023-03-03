@@ -9,7 +9,8 @@ public class RespostaListaExercicio {
 	 * Não se faz necessário implementar dentro do escopo do método.
 	 */
 	public static void main(String[] args) {
-		
+		int[] array = {1,2,3,4,5,6,7,8,9,10};
+		imprimirMaiorMenorElemento(array);
 	}
 	
 	/**
@@ -21,7 +22,8 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularImc(float peso, float altura) 
 	{
-		return 0f;
+		float resultado = peso / (altura * altura);
+		return resultado;
 	}
 	
 	/**
@@ -34,7 +36,8 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularAreaTrapezio(float baseMaior, float baseMenor, float altura) 
 	{	
-		return 0f;
+		float area = ((baseMaior + baseMenor)*altura)/2;
+		return area;
 	}
 	
 	/**
@@ -47,7 +50,10 @@ public class RespostaListaExercicio {
 	 */
 	public static int maiorEntreDoisInteiros(int a, int b) 
 	{
-		return 0;
+		if(a > b) {
+			return a;
+		}
+		return b;
 	}
 	
 	/**
@@ -59,6 +65,9 @@ public class RespostaListaExercicio {
 	 */
 	public static boolean verificarParImpar(int numero) 
 	{
+		if(numero % 2 == 0) {
+			return true;
+		}
 		return false;		
 	}
 	
@@ -69,7 +78,11 @@ public class RespostaListaExercicio {
 	 * @return media
 	 */
 	public static float calcularMediaNotas(float[] notas) {
-		return 0f;
+		float soma = 0.0f;
+		for(float nota : notas) {
+			soma += nota;
+		}
+		return soma/notas.length;
 	}
 	
 	/**
@@ -80,7 +93,14 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirArrayInverso(int[] array)
 	{
-		System.out.print("");
+		for(int i = array.length - 1; i >= 0; i--) {
+			if(i != 0) {
+				System.out.print(array[i]+", ");
+			}else {
+				System.out.print(array[i]);
+			}
+		}
+		
 	}
 	
 	/**
@@ -91,7 +111,18 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosPrimos(int[] array) 
 	{
-		System.out.print("");
+		int contador;
+		for(int elemento : array) {
+			contador = 0;
+			for(int i = 1; i <= elemento; i++) {
+				if(elemento % i == 0) {
+					contador += 1;
+				}
+			}
+			if(contador == 2) {
+				System.out.print(elemento + " ");
+			}
+		}
 	}
 	
 	
@@ -103,7 +134,11 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosImpares(int[] array) 
 	{
-		System.out.print("");
+		for(int elemento : array) {
+			if(elemento % 2 != 0) {
+				System.out.print(elemento + " ");
+			}
+		}
 	}
 	
 	
@@ -115,7 +150,11 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosPares(int[] array) 
 	{
-		System.out.print("");
+		for(int elemento : array) {
+			if(elemento % 2 == 0) {
+				System.out.print(elemento + " ");
+			}
+		}
 	}
 	
 	
@@ -127,7 +166,16 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirMaiorMenorElemento(int[] array) 
 	{
-		System.out.print("");
+		
+		int Maior = array[0];
+		int Menor = array[0];
+		for(int elemento : array) {
+			if(Maior < elemento) {
+				Maior = elemento;
+			}if(Menor > elemento) {
+				Menor = elemento;
+			}
+		}System.out.print(Maior + " " + Menor + " ");
 	}
 	
 	/**
@@ -138,7 +186,11 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularMediaAritmetica(int[] array) 
 	{
-		return 0f;
+		int soma = 0;
+		for(int elemento : array) {
+			soma += elemento;
+		}
+		return soma/array.length;
 	}
 	
 }
